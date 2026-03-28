@@ -6,12 +6,7 @@
     <title>Fundación Dios es Nuestro Proveedor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .nav-link-mobile { @apply block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 text-gray-800 font-sans">
 
@@ -20,7 +15,7 @@
             <div class="flex items-center cursor-pointer" onclick="showTab('inicio')">
                 <img src="logo.jpeg" alt="Logo" class="h-12 md:h-16 w-auto mr-3">
                 <div class="leading-tight">
-                    <p class="font-bold text-red-600 text-sm md:text-lg">FUNDACIÓN</p>
+                    <p class="font-bold text-red-600 text-sm md:text-lg uppercase">Fundación</p>
                     <p class="text-[10px] md:text-xs font-semibold text-blue-500 uppercase">Dios es Nuestro Proveedor</p>
                 </div>
             </div>
@@ -36,17 +31,15 @@
 
             <div class="lg:hidden flex items-center">
                 <button onclick="toggleLanguage()" id="lang-btn-mobile" class="mr-4 text-xs font-bold text-blue-600 border border-blue-600 px-2 py-1 rounded">EN</button>
-                <button onclick="toggleMobileMenu()" class="text-gray-600 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <button onclick="toggleMobileMenu()" class="text-gray-600 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 pb-4 shadow-inner">
-            <button onclick="showTab('inicio')" class="nav-link-mobile w-full text-left" data-key="nav-home">Inicio</button>
-            <button onclick="showTab('objetivo')" class="nav-link-mobile w-full text-left" data-key="nav-obj">Objetivo</button>
-            <button onclick="showTab('miembros')" class="nav-link-mobile w-full text-left" data-key="nav-members">Miembros</button>
-            <button onclick="showTab('blog')" class="nav-link-mobile w-full text-left" data-key="nav-blog">Historias</button>
+            <button onclick="showTab('inicio')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-home">Inicio</button>
+            <button onclick="showTab('objetivo')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-obj">Objetivo</button>
+            <button onclick="showTab('miembros')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-members">Miembros</button>
+            <button onclick="showTab('blog')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-blog">Historias</button>
             <button onclick="showTab('donar')" class="block mx-4 mt-2 text-center bg-red-600 text-white py-2 rounded-lg font-bold" data-key="nav-donate">Donar</button>
         </div>
     </nav>
@@ -56,81 +49,94 @@
         <section id="tab-inicio" class="tab-content active">
             <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
                 <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
-                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight" data-key="hero-title">Proveemos ayuda a los más necesitados.</h1>
-                    <p class="text-lg md:text-xl text-gray-600 mb-6 md:mb-8" data-key="hero-sub">Guiados por la fe, trabajamos para ser el canal de provisión para familias en vulnerabilidad.</p>
-                    <button onclick="showTab('donar')" class="w-full md:w-auto bg-red-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-red-700 active:scale-95 transition" data-key="hero-btn">Apoyar ahora</button>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight" data-key="hero-title">Proveemos ayuda a los más necesitados.</h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8" data-key="hero-sub">Guiados por la fe, trabajamos para ser el canal de provisión para familias en vulnerabilidad.</p>
+                    <button onclick="showTab('donar')" class="bg-red-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-red-700 transition" data-key="hero-btn">Apoyar ahora</button>
                 </div>
-                <div class="lg:w-1/2 order-1 lg:order-2 rounded-2xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Ayuda" class="w-full h-64 md:h-96 object-cover">
+                <div class="lg:w-1/2 order-1 lg:order-2 rounded-2xl overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" class="w-full h-64 md:h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
             </div>
         </section>
 
         <section id="tab-objetivo" class="tab-content">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-600" data-key="obj-title">Nuestro Objetivo</h2>
-            <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-sm border-t-4 border-red-500">
-                <p class="text-base md:text-lg leading-relaxed mb-6" data-key="obj-p1">La Fundación Dios es Nuestro Proveedor nace del deseo de servir al prójimo. Nuestro objetivo es asistir a personas en crisis, proporcionando recursos y esperanza.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
-                    <div class="text-center p-4 bg-red-50 rounded-xl">
-                        <i class="fas fa-utensils text-3xl text-red-500 mb-3"></i>
-                        <h4 class="font-bold text-sm" data-key="obj-icon1">Alimentación</h4>
-                    </div>
-                    <div class="text-center p-4 bg-blue-50 rounded-xl">
-                        <i class="fas fa-home text-3xl text-blue-500 mb-3"></i>
-                        <h4 class="font-bold text-sm" data-key="obj-icon2">Vivienda</h4>
-                    </div>
-                    <div class="text-center p-4 bg-yellow-50 rounded-xl">
-                        <i class="fas fa-heart text-3xl text-yellow-600 mb-3"></i>
-                        <h4 class="font-bold text-sm" data-key="obj-icon3">Salud</h4>
-                    </div>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-8 text-blue-600" data-key="obj-title">Nuestro Objetivo</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border-t-8 border-red-500">
+                <p class="text-lg md:text-xl leading-relaxed text-center italic text-gray-700 mb-10" data-key="obj-p1">"Brindamos asistencia integral y esperanza a familias en situación de vulnerabilidad, guiados por la fe."</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-red-50 rounded-2xl"><i class="fas fa-hand-holding-heart text-4xl text-red-500 mb-4"></i><h4 class="font-bold" data-key="obj-icon1">Alimentación</h4></div>
+                    <div class="text-center p-6 bg-blue-50 rounded-2xl"><i class="fas fa-home text-4xl text-blue-500 mb-4"></i><h4 class="font-bold" data-key="obj-icon2">Vivienda</h4></div>
+                    <div class="text-center p-6 bg-yellow-50 rounded-2xl"><i class="fas fa-school text-4xl text-yellow-600 mb-4"></i><h4 class="font-bold" data-key="obj-icon3">Educación</h4></div>
                 </div>
             </div>
         </section>
 
+        <section id="tab-miembros" class="tab-content">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12" data-key="members-title">Nuestro Equipo</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border-b-4 border-blue-500 group">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow group-hover:scale-105 transition">
+                    <h3 class="font-bold text-lg" data-key="member-1-name">Nacas Santoz</h3>
+                    <p class="text-red-600 text-sm font-bold uppercase" data-key="member-1-role">Fundador</p>
+                </div>
+                </div>
+        </section>
+
         <section id="tab-blog" class="tab-content">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12" data-key="blog-title">Historias de Impacto</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="bg-white rounded-xl overflow-hidden shadow-md">
-                    <div class="h-48 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover">
-                    </div>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12" data-key="blog-title">Historias de Impacto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg group border border-gray-100">
+                    <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition"></div>
                     <div class="p-6">
                         <span class="text-xs font-bold text-red-600 uppercase" data-key="blog-cat">Testimonio</span>
-                        <h3 class="text-xl font-bold my-2" data-key="blog-h1">Una nueva oportunidad para María</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-key="blog-p1">Gracias a la fundación, María pudo costear su tratamiento médico...</p>
-                        <button class="text-blue-600 font-bold hover:underline" data-key="blog-more">Leer más</button>
+                        <h3 class="text-xl font-bold my-2" data-key="blog-1-title">Una nueva oportunidad para María</h3>
+                        <p class="text-gray-600 text-sm mb-4" data-key="blog-1-desc">Gracias a la fundación, María pudo costear su tratamiento médico...</p>
+                        <button class="text-blue-600 font-bold hover:underline" data-key="blog-more">Leer más →</button>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="tab-donar" class="tab-content text-center max-w-lg mx-auto">
-            <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border-t-8 border-red-600">
+        <section id="tab-donar" class="tab-content max-w-2xl mx-auto">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-red-600 text-center">
                 <h2 class="text-3xl font-bold mb-4" data-key="donate-title">Haz tu Donación</h2>
-                <p class="text-gray-500 mb-8" data-key="donate-sub">Cada aporte cuenta para ayudar a los demás.</p>
+                <p class="text-gray-500 mb-10" data-key="donate-sub">Cada aporte cuenta para ayudar a los demás.</p>
                 <div class="space-y-4">
-                    <div class="p-4 bg-slate-50 rounded-lg border border-dashed border-gray-300">
-                        <p class="text-xs text-gray-400 uppercase font-bold" data-key="donate-bank">Banco</p>
-                        <p class="font-mono text-sm md:text-base">0123-4567-89-0123456789</p>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-dashed border-gray-300">
+                        <p class="text-xs font-bold text-gray-400 uppercase mb-2" data-key="donate-bank">Datos Bancarios</p>
+                        <p class="font-mono text-gray-800">Banco: 0123-4567-89-0123456789</p>
+                        <p class="text-sm">Titular: Fundación DEP</p>
                     </div>
-                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2">
-                        <i class="fas fa-paper-plane"></i> Zelle: donar@dep.org
-                    </button>
+                    <button class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow hover:bg-blue-700 transition">Zelle: donar@dep.org</button>
+                    <button class="w-full bg-yellow-400 text-red-900 py-4 rounded-xl font-bold shadow hover:bg-yellow-300 transition">PayPal</button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-900 text-white pt-12 pb-6 mt-12">
-        <div class="container mx-auto px-6 text-center">
-            <h4 class="font-bold text-lg mb-4">Fundación Dios es Nuestro Proveedor</h4>
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="#" class="text-3xl hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-3xl hover:text-blue-400 transition"><i class="fab fa-facebook"></i></a>
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h4 class="font-bold text-xl mb-4">Fundación Dios es Nuestro Proveedor</h4>
+                <p class="text-gray-400" data-key="footer-desc">Transformando vidas a través del amor y la provisión.</p>
+                <div class="flex space-x-6 mt-6">
+                    <a href="#" class="text-3xl hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-3xl hover:text-blue-400 transition"><i class="fab fa-facebook"></i></a>
+                </div>
             </div>
-            <p class="text-xs text-gray-500 border-t border-gray-800 pt-6" data-key="footer-copy">&copy; 2026 Fundación Dios es Nuestro Proveedor. Todos los derechos reservados.</p>
+            <div class="text-center">
+                <h4 class="font-bold mb-4 text-blue-400" data-key="footer-insta">Comunidad en Instagram</h4>
+                <div class="grid grid-cols-4 gap-2 opacity-70">
+                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1509059852496-f3822ae057bf?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
+                </div>
+            </div>
         </div>
+        <p class="text-center text-gray-600 text-xs mt-12 border-t border-gray-800 pt-6">&copy; 2026 Fundación Dios es Nuestro Proveedor.</p>
     </footer>
 
     <script src="script.js"></script>
