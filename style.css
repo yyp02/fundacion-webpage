@@ -1,29 +1,44 @@
-/* Banner setup with HD Image */
+/* Banner Section */
 .banner-area {
     position: relative;
-    /* Ensure this filename matches your saved HD image */
+    /* Use your HD generated image */
     background-image: url('images/banner.png');
     background-size: cover;
-    background-position: center 25%;
+    background-position: center 20%;
     background-repeat: no-repeat;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
 }
 
-/* Color bleed overlay to ensure text readability */
+/* The soft color bleed overlay */
 .banner-area::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, 
         rgba(248, 245, 238, 0.95) 0%, 
-        rgba(248, 245, 238, 0.7) 40%, 
+        rgba(248, 245, 238, 0.7) 50%, 
         rgba(248, 245, 238, 0) 100%);
     z-index: 1;
 }
 
-.tab-content { animation: fadeIn 0.4s ease-out; }
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Nav Link Bracket Styling */
+.nav-link {
+    color: #4B5563;
+    transition: all 0.2s ease;
 }
 
-.nav-link.active { @apply text-red-600 border-b-2 border-red-600; }
+.nav-link:hover, .nav-link.active {
+    color: #A61E1E; /* Deep Red */
+}
+
+/* Tab Animations */
+.tab-content { 
+    animation: fadeIn 0.5s ease-out; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
