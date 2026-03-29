@@ -42,3 +42,15 @@
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+article img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+.tab-content {
+    min-height: 70vh; /* Keeps the footer from jumping up on short pages */
+}
