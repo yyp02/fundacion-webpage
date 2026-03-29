@@ -1,15 +1,17 @@
 const translations = {
     es: {
-        "nav-home": "Inicio", "nav-members": "Miembros", "nav-blog": "Historias", "nav-donate": "Donar", "nav-contact": "Contacto",
+        "nav-home": "Inicio", "nav-about": "Sobre Nosotros", "nav-blog": "Historias", "nav-donate": "Donar", "nav-contact": "Contacto",
         "banner-h1": "Nuestra Misión:<br>Provemos ayuda a los más necesitados.", "btn-dona": "Dona Ahora", "btn-cono": "Conócenos",
         "obj-title": "Objetivo", "obj-p1": "Brindamos asistencia integral y esperanza a familias en situación de vulnerabilidad, guiados por la fe.",
-        "members-title": "Miembros de la Fundación", "blog-title": "Historias de Ayuda", "donate-title": "Cómo Donar"
+        "about-h2": "Sobre Nosotros", "about-p": "Somos una organización dedicada a ser el puente entre la provisión y la necesidad.",
+        "members-title": "Miembros de la Fundación"
     },
     en: {
-        "nav-home": "Home", "nav-members": "Members", "nav-blog": "Stories", "nav-donate": "Donate", "nav-contact": "Contact",
-        "banner-h1": "Our Mission:<br>We provide help to those in most need.", "btn-dona": "Donate Now", "btn-cono": "Meet Us",
+        "nav-home": "Home", "nav-about": "About Us", "nav-blog": "Stories", "nav-donate": "Donate", "nav-contact": "Contact",
+        "banner-h1": "Our Mission:<br>Providing help to those in need.", "btn-dona": "Donate Now", "btn-cono": "Meet Us",
         "obj-title": "Objective", "obj-p1": "We provide comprehensive assistance and hope to families in vulnerability, guided by faith.",
-        "members-title": "Foundation Members", "blog-title": "Help Stories", "donate-title": "How to Donate"
+        "about-h2": "About Us", "about-p": "We are an organization dedicated to being the bridge between provision and need.",
+        "members-title": "Foundation Members"
     }
 };
 
@@ -18,13 +20,13 @@ let currentLang = 'es';
 function showTab(tabId) {
     document.getElementById('mobile-menu').classList.add('hidden');
     
-    // Switch navigation active states
+    // Toggle active state for navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
         if(link.getAttribute('onclick').includes(tabId)) link.classList.add('active');
     });
 
-    // Switch tab content
+    // Toggle tab visibility
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.add('hidden');
     });

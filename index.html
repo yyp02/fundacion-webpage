@@ -12,26 +12,30 @@
 
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 lg:px-6 flex justify-between items-center py-2">
-            <div class="flex items-center cursor-pointer" onclick="showTab('inicio')">
-                <img src="logo.jpeg" alt="Logo" class="h-20 md:h-28 lg:h-32 w-auto">
+            <div class="flex items-center cursor-pointer gap-4" onclick="showTab('inicio')">
+                <img src="logo.jpeg" alt="Logo" class="h-16 md:h-24 w-auto">
+                <div class="flex flex-col border-l-2 border-gray-200 pl-4">
+                    <span class="text-red-600 font-black text-lg md:text-xl leading-none uppercase">Fundación</span>
+                    <span class="text-blue-500 font-bold text-sm md:text-base leading-none uppercase">Dios es Nuestro Proveedor</span>
+                </div>
             </div>
             
             <div class="hidden lg:flex items-center space-x-6 font-bold uppercase text-xs tracking-wider">
                 <button onclick="showTab('inicio')" class="nav-link active" data-key="nav-home">Inicio</button>
-                <button onclick="showTab('miembros')" class="nav-link" data-key="nav-members">Miembros</button>
+                <button onclick="showTab('nosotros')" class="nav-link" data-key="nav-about">Sobre Nosotros</button>
                 <button onclick="showTab('blog')" class="nav-link" data-key="nav-blog">Historias</button>
                 <button onclick="showTab('donar')" class="nav-link" data-key="nav-donate">Donar</button>
                 <button onclick="showTab('contacto')" class="nav-link" data-key="nav-contact">Contacto</button>
                 <button onclick="toggleLanguage()" id="lang-btn-desktop" class="border-2 border-red-500 text-red-500 px-4 py-1 rounded-md hover:bg-red-50 transition">English</button>
             </div>
 
-            <div class="lg:hidden flex items-center">
+            <div class="lg:hidden">
                 <button onclick="toggleMobileMenu()" class="text-gray-600"><i class="fas fa-bars text-2xl"></i></button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-4 space-y-4 font-bold uppercase text-xs">
             <button onclick="showTab('inicio')" class="block w-full text-left" data-key="nav-home">Inicio</button>
-            <button onclick="showTab('miembros')" class="block w-full text-left" data-key="nav-members">Miembros</button>
+            <button onclick="showTab('nosotros')" class="block w-full text-left" data-key="nav-about">Sobre Nosotros</button>
             <button onclick="showTab('blog')" class="block w-full text-left" data-key="nav-blog">Historias</button>
             <button onclick="showTab('donar')" class="block w-full text-left" data-key="nav-donate">Donar</button>
             <button onclick="showTab('contacto')" class="block w-full text-left" data-key="nav-contact">Contacto</button>
@@ -39,16 +43,16 @@
     </nav>
 
     <main>
-        <div id="tab-inicio" class="tab-content active">
-            <section class="banner-area relative py-20 md:py-32 overflow-hidden">
+        <div id="tab-inicio" class="tab-content">
+            <section class="banner-area relative py-24 md:py-40 overflow-hidden">
                 <div class="container mx-auto px-6 relative z-10">
-                    <div class="max-w-2xl">
+                    <div class="max-w-2xl bg-white/20 backdrop-blur-sm p-8 rounded-3xl">
                         <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight" data-key="banner-h1">
                             Nuestra Misión:<br>Provemos ayuda a los más necesitados.
                         </h1>
                         <div class="flex flex-wrap gap-4 mt-8">
                             <button onclick="showTab('donar')" class="bg-red-600 text-white font-bold px-10 py-4 rounded-xl shadow-lg hover:bg-red-700 transition uppercase text-sm" data-key="btn-dona">Dona Ahora</button>
-                            <button onclick="showTab('miembros')" class="bg-blue-500 text-white font-bold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-600 transition uppercase text-sm" data-key="btn-cono">Conócenos</button>
+                            <button onclick="showTab('nosotros')" class="bg-blue-500 text-white font-bold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-600 transition uppercase text-sm" data-key="btn-cono">Conócenos</button>
                         </div>
                     </div>
                 </div>
@@ -69,66 +73,45 @@
             </section>
         </div>
 
-        <div id="tab-miembros" class="tab-content hidden container mx-auto px-6 py-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 flex items-center justify-center gap-4">
-                <i class="fas fa-heart text-red-600"></i> <span data-key="members-title">Miembros de la Fundación</span>
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center group">
-                    <div class="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-5xl border-b-4 border-red-500 transition-transform group-hover:scale-105">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3 class="font-bold text-lg uppercase">Naca Santoz</h3>
-                    <p class="text-xs text-gray-500 tracking-widest mt-1">Fundador</p>
+        <div id="tab-nosotros" class="tab-content hidden">
+            <section class="container mx-auto px-6 py-20">
+                <div class="max-w-4xl mx-auto mb-20 text-center">
+                    <h2 class="text-4xl font-bold mb-8 text-gray-900 uppercase" data-key="about-h2">Sobre Nosotros</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed" data-key="about-p">
+                        Somos una organización dedicada a ser el puente entre la provisión y la necesidad. 
+                        Buscamos transformar vidas a través de la fe y la ayuda directa a quienes más lo necesitan.
+                    </p>
                 </div>
-                <div class="text-center group">
-                    <div class="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-5xl border-b-4 border-blue-500 transition-transform group-hover:scale-105">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3 class="font-bold text-lg uppercase">Naris Salilene</h3>
-                    <p class="text-xs text-gray-500 tracking-widest mt-1">Mentora</p>
+
+                <div class="bg-white rounded-3xl p-10 md:p-16 shadow-sm border-b-8 border-blue-500">
+                    <h3 class="text-2xl font-bold text-center mb-16 flex items-center justify-center gap-4">
+                        <i class="fas fa-heart text-red-600"></i> <span data-key="members-title">Miembros de la Fundación</span>
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                        <div class="text-center group">
+                            <div class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-300 text-4xl transition-transform group-hover:scale-105">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4 class="font-bold text-base uppercase">Naca Santoz</h4>
+                            <p class="text-[10px] text-gray-400 tracking-widest uppercase">Fundador</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-300 text-4xl transition-transform group-hover:scale-105">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4 class="font-bold text-base uppercase">Naris Salilene</h4>
+                            <p class="text-[10px] text-gray-400 tracking-widest uppercase">Mentora</p>
+                        </div>
+                        </div>
                 </div>
-                </div>
+            </section>
         </div>
 
-        <div id="tab-blog" class="tab-content hidden container mx-auto px-6 py-16">
-            <h2 class="text-3xl font-bold mb-10 text-center uppercase" data-key="blog-title">Historias de Ayuda</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-300"><i class="fas fa-image text-4xl"></i></div>
-                    <div class="p-6"><h3 class="font-bold mb-2">Próximamente...</h3><p class="text-sm text-gray-500">Estamos preparando hermosas historias para compartir con ustedes.</p></div>
-                </div>
-            </div>
+        <div id="tab-blog" class="tab-content hidden py-20 text-center">
+            <h2 class="text-3xl font-bold mb-4 uppercase">Historias de Ayuda</h2>
+            <p class="text-gray-500 italic">Próximamente compartiremos testimonios de impacto.</p>
         </div>
 
-        <div id="tab-donar" class="tab-content hidden container mx-auto px-6 py-16">
-            <div class="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-xl text-center border-t-8 border-red-600">
-                <h2 class="text-3xl font-bold mb-6" data-key="donate-title">Cómo Donar</h2>
-                <div class="space-y-6">
-                    <div class="p-6 bg-slate-50 rounded-2xl border-2 border-dashed border-gray-200">
-                        <p class="font-bold text-red-600 mb-2 uppercase text-xs">Transferencia Bancaria</p>
-                        <p class="text-lg font-mono">Próximamente informaremos los datos...</p>
-                    </div>
-                    <button class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg">Zelle: donaciones@dep.org</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="tab-contacto" class="tab-content hidden container mx-auto px-6 py-16 text-center">
-            <h2 class="text-3xl font-bold mb-6" data-key="nav-contact">Contáctanos</h2>
-            <p class="text-xl text-gray-600 mb-10">¿Tienes dudas o quieres unirte como voluntario?</p>
-            <div class="flex justify-center gap-8 text-4xl text-blue-600">
-                <i class="fab fa-instagram cursor-pointer hover:text-pink-500"></i>
-                <i class="fab fa-facebook cursor-pointer hover:text-blue-800"></i>
-                <i class="fab fa-whatsapp cursor-pointer hover:text-green-500"></i>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-gray-900 text-white py-12 mt-20 text-center">
-        <p class="text-sm text-gray-500">&copy; 2026 Fundación Dios es Nuestro Proveedor.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <div id="tab-donar" class="tab-content hidden py-20 text-center">
+            <h2 class="text-3xl font-bold mb-4 uppercase">Donaciones</h2>
+            <p class="text-gray-500 italic">Espacio para detalles de PayPal
