@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-gray-800 font-sans">
-
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center cursor-pointer" onclick="showTab('inicio')">
-                <img src="logo.jpeg" alt="Logo" class="h-12 md:h-16 w-auto mr-3">
-                <div class="leading-tight">
-                    <p class="font-bold text-red-600 text-sm md:text-lg uppercase">Fundación</p>
-                    <p class="text-[10px] md:text-xs font-semibold text-blue-500 uppercase">Dios es Nuestro Proveedor</p>
-                </div>
+<body class="bg-[#F8F5EE] text-gray-800 font-sans"> <nav class="bg-white shadow-md relative z-50">
+        <div class="container mx-auto px-4 lg:px-6 flex justify-between items-center py-2 lg:py-0">
+            
+            <div class="flex items-center cursor-pointer -ml-2 lg:-ml-6" onclick="showTab('inicio')">
+                <img src="logo.jpeg" alt="Foundation Logo" class="h-24 md:h-32 lg:h-36 w-auto p-2">
             </div>
             
-            <div class="hidden lg:flex items-center space-x-6 font-medium">
-                <button onclick="showTab('inicio')" class="hover:text-red-600 transition" data-key="nav-home">Inicio</button>
-                <button onclick="showTab('objetivo')" class="hover:text-red-600 transition" data-key="nav-obj">Objetivo</button>
-                <button onclick="showTab('miembros')" class="hover:text-red-600 transition" data-key="nav-members">Miembros</button>
-                <button onclick="showTab('blog')" class="hover:text-red-600 transition" data-key="nav-blog">Historias</button>
-                <button onclick="showTab('donar')" class="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition" data-key="nav-donate">Donar</button>
-                <button onclick="toggleLanguage()" id="lang-btn-desktop" class="ml-4 border-2 border-blue-500 text-blue-500 px-3 py-1 rounded-md hover:bg-blue-50 transition text-sm">English</button>
+            <div class="hidden lg:flex items-center space-x-6 h-36 font-bold tracking-tight uppercase text-sm">
+                <button onclick="showTab('inicio')" class="nav-link" data-key="nav-home">Inicio</button>
+                <button onclick="showTab('objetivo')" class="nav-link" data-key="nav-obj">Objetivo</button>
+                <button onclick="showTab('miembros')" class="nav-link active" data-key="nav-members">Miembros</button>
+                <button onclick="showTab('blog')" class="nav-link" data-key="nav-blog">Historias (Blog)</button>
+                <button onclick="showTab('donar')" class="nav-link" data-key="nav-donate">Cómo Donar</button>
+                <button onclick="showTab('contact')" class="nav-link" data-key="nav-contact">Contáctanos</button>
+                
+                <button onclick="toggleLanguage()" id="lang-btn-desktop" class="border-2 border-red-500 text-red-500 font-bold px-4 py-1.5 rounded-md hover:bg-red-50 transition text-sm">
+                    English
+                </button>
             </div>
 
             <div class="lg:hidden flex items-center">
@@ -39,104 +38,87 @@
             <button onclick="showTab('inicio')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-home">Inicio</button>
             <button onclick="showTab('objetivo')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-obj">Objetivo</button>
             <button onclick="showTab('miembros')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-members">Miembros</button>
-            <button onclick="showTab('blog')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-blog">Historias</button>
-            <button onclick="showTab('donar')" class="block mx-4 mt-2 text-center bg-red-600 text-white py-2 rounded-lg font-bold" data-key="nav-donate">Donar</button>
+            <button onclick="showTab('blog')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-blog">Historias (Blog)</button>
+            <button onclick="showTab('donar')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-donate">Cómo Donar</button>
+            <button onclick="showTab('contact')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left" data-key="nav-contact">Contáctanos</button>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 md:px-6 py-6 md:py-12">
+    <main>
         
-        <section id="tab-inicio" class="tab-content active">
-            <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
-                <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
-                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight" data-key="hero-title">Proveemos ayuda a los más necesitados.</h1>
-                    <p class="text-lg md:text-xl text-gray-600 mb-8" data-key="hero-sub">Guiados por la fe, trabajamos para ser el canal de provisión para familias en vulnerabilidad.</p>
-                    <button onclick="showTab('donar')" class="bg-red-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-red-700 transition" data-key="hero-btn">Apoyar ahora</button>
-                </div>
-                <div class="lg:w-1/2 order-1 lg:order-2 rounded-2xl overflow-hidden shadow-2xl relative">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" class="w-full h-64 md:h-96 object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-            </div>
-        </section>
+        <section id="banner-area" class="tab-content relative active">
+            
+            <div class="absolute inset-0 bg-[#DEDACA] opacity-70 pointer-events-none"></div>
 
-        <section id="tab-objetivo" class="tab-content">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-8 text-blue-600" data-key="obj-title">Nuestro Objetivo</h2>
-            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border-t-8 border-red-500">
-                <p class="text-lg md:text-xl leading-relaxed text-center italic text-gray-700 mb-10" data-key="obj-p1">"Brindamos asistencia integral y esperanza a familias en situación de vulnerabilidad, guiados por la fe."</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center p-6 bg-red-50 rounded-2xl"><i class="fas fa-hand-holding-heart text-4xl text-red-500 mb-4"></i><h4 class="font-bold" data-key="obj-icon1">Alimentación</h4></div>
-                    <div class="text-center p-6 bg-blue-50 rounded-2xl"><i class="fas fa-home text-4xl text-blue-500 mb-4"></i><h4 class="font-bold" data-key="obj-icon2">Vivienda</h4></div>
-                    <div class="text-center p-6 bg-yellow-50 rounded-2xl"><i class="fas fa-school text-4xl text-yellow-600 mb-4"></i><h4 class="font-bold" data-key="obj-icon3">Educación</h4></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tab-miembros" class="tab-content">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12" data-key="members-title">Nuestro Equipo</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-md text-center border-b-4 border-blue-500 group">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow group-hover:scale-105 transition">
-                    <h3 class="font-bold text-lg" data-key="member-1-name">Nacas Santoz</h3>
-                    <p class="text-red-600 text-sm font-bold uppercase" data-key="member-1-role">Fundador</p>
-                </div>
-                </div>
-        </section>
-
-        <section id="tab-blog" class="tab-content">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12" data-key="blog-title">Historias de Impacto</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white rounded-2xl overflow-hidden shadow-lg group border border-gray-100">
-                    <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition"></div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-red-600 uppercase" data-key="blog-cat">Testimonio</span>
-                        <h3 class="text-xl font-bold my-2" data-key="blog-1-title">Una nueva oportunidad para María</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-key="blog-1-desc">Gracias a la fundación, María pudo costear su tratamiento médico...</p>
-                        <button class="text-blue-600 font-bold hover:underline" data-key="blog-more">Leer más →</button>
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 py-16 md:py-24 relative z-10 items-center">
+                
+                <div class="text-center md:text-left pt-6 md:pt-0">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-[1.05]" data-key="banner-h1">Nuestra Misión:<br>Provemos ayuda a los más necesitados.</h1>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-10">
+                        <button onclick="showTab('donar')" class="bg-red-600 text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-xl shadow-lg hover:bg-red-700 transition" data-key="banner-btn-dona">Dona Ahora</button>
+                        <button onclick="showTab('objetivo')" class="bg-blue-600 text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 transition" data-key="banner-btn-cono">Conócenos</button>
                     </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="tab-donar" class="tab-content max-w-2xl mx-auto">
-            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-red-600 text-center">
-                <h2 class="text-3xl font-bold mb-4" data-key="donate-title">Haz tu Donación</h2>
-                <p class="text-gray-500 mb-10" data-key="donate-sub">Cada aporte cuenta para ayudar a los demás.</p>
-                <div class="space-y-4">
-                    <div class="p-4 bg-slate-50 rounded-xl border border-dashed border-gray-300">
-                        <p class="text-xs font-bold text-gray-400 uppercase mb-2" data-key="donate-bank">Datos Bancarios</p>
-                        <p class="font-mono text-gray-800">Banco: 0123-4567-89-0123456789</p>
-                        <p class="text-sm">Titular: Fundación DEP</p>
-                    </div>
-                    <button class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow hover:bg-blue-700 transition">Zelle: donar@dep.org</button>
-                    <button class="w-full bg-yellow-400 text-red-900 py-4 rounded-xl font-bold shadow hover:bg-yellow-300 transition">PayPal</button>
+                </div>
+                
+                <div class="relative rounded-xl overflow-hidden shadow-2xl invisible">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
             </div>
+            
+            <div class="absolute inset-x-0 top-0 bottom-0 opacity-15 pointer-events-none">
+                <i class="far fa-heart text-[20rem] text-red-600/40 absolute -top-10 -right-10 rotate-12"></i>
+                <i class="far fa-heart text-[15rem] text-red-600/30 absolute bottom-20 left-10 -rotate-12"></i>
+            </div>
         </section>
 
+        <section class="container mx-auto px-6 py-12 md:py-20">
+            
+            <div id="tab-objetivo" class="tab-content relative hidden">
+                <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 bg-white p-10 rounded-2xl shadow-sm border-t-8 border-red-500">
+                    <img src="https://via.placeholder.com/128?text=hands" alt="Hand icon decoration from logo" class="w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
+                    <p class="text-2xl leading-relaxed text-gray-700" data-key="obj-p1">
+                        La Fundación Dios es Nuestro Proveedor nace del deseo de servir al prójimo. Nuestro objetivo es asistir a personas en crisis, proporcionando recursos y esperanza.
+                    </p>
+                </div>
+            </div>
+
+            <div id="tab-miembros" class="tab-content relative hidden">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 flex items-center justify-center gap-6" data-key="members-title">
+                    <i class="fas fa-heart text-red-600"></i> Miembros de la Fundación
+                </h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+                    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-b-4 border-red-500 group">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Nacas Santoz photo" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                        <h3 class="font-bold text-xl md:text-2xl">Nacas Santoz</h3>
+                        <p class="text-xs md:text-sm text-gray-500 uppercase tracking-widest mt-1" data-key="member-role1">Fundador</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-b-4 border-blue-500 group">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Naris Salilene photo" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                        <h3 class="font-bold text-xl md:text-2xl">Naris Salilene</h3>
+                        <p class="text-xs md:text-sm text-gray-500 uppercase tracking-widest mt-1" data-key="member-role2">Mentora</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-b-4 border-red-500 group">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80" alt="Maria Soreses photo" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                        <h3 class="font-bold text-xl md:text-2xl">Maria Soreses</h3>
+                        <p class="text-xs md:text-sm text-gray-500 uppercase tracking-widest mt-1" data-key="member-role3">Coordinadora</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-b-4 border-blue-500 group">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Maria Carsnjoko photo" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                        <h3 class="font-bold text-xl md:text-2xl">Maria Carsnjoko</h3>
+                        <p class="text-xs md:text-sm text-gray-500 uppercase tracking-widest mt-1" data-key="member-role4">Mentora</p>
+                    </div>
+                </div>
+            </div>
+
+            </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-12 mt-20">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h4 class="font-bold text-xl mb-4">Fundación Dios es Nuestro Proveedor</h4>
-                <p class="text-gray-400" data-key="footer-desc">Transformando vidas a través del amor y la provisión.</p>
-                <div class="flex space-x-6 mt-6">
-                    <a href="#" class="text-3xl hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-3xl hover:text-blue-400 transition"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            <div class="text-center">
-                <h4 class="font-bold mb-4 text-blue-400" data-key="footer-insta">Comunidad en Instagram</h4>
-                <div class="grid grid-cols-4 gap-2 opacity-70">
-                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
-                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
-                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1509059852496-f3822ae057bf?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
-                    <div class="aspect-square bg-gray-700 rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=150&q=60" class="w-full h-full object-cover"></div>
-                </div>
-            </div>
-        </div>
-        <p class="text-center text-gray-600 text-xs mt-12 border-t border-gray-800 pt-6">&copy; 2026 Fundación Dios es Nuestro Proveedor.</p>
+    <footer class="bg-gray-900 text-white pt-12 pb-6 mt-16 border-t border-gray-800">
+        <p class="text-sm md:text-base text-gray-500 border-t border-gray-800 pt-6 mt-10 text-center" data-key="footer-copy">
+            &copy; 2026 Fundación Dios es Nuestro Proveedor (DEP). Todos los derechos reservados.
+        </p>
     </footer>
 
     <script src="script.js"></script>

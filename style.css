@@ -1,7 +1,42 @@
-html { scroll-behavior: smooth; }
-.tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
-.tab-content.active { display: block; }
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(15px); } 
-    to { opacity: 1; transform: translateY(0); } 
+/* Color Overlay and Texturing matching mockup */
+
+/* Apply soft overlap of background colors on the banner area */
+#banner-area {
+    /* Main Background Image - Stock Placeholder (replace src/ with hero_banner.jpg from mockup images/) */
+    background-image: 
+        linear-gradient(rgba(222, 218, 202, 0.7), rgba(222, 218, 202, 0.7)), /* Soft DEDACA overlap */
+        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Soft border blending, like water stain in mockup */
+    filter: drop-shadow(0 -10px 30px rgba(0,0,0,0.05));
+}
+
+/* Updated active nav link styling to match mockup bold red text */
+.nav-link {
+    @apply h-full inline-flex items-center px-2 cursor-pointer transition active:scale-95;
+}
+.nav-link.active, .nav-link:hover {
+    @apply text-red-600;
+    /* Simulate bold red line style under active link from mockup */
+    background: linear-gradient(180deg, transparent 80%, rgba(239, 68, 68, 0.1) 80%);
+}
+
+/* Styling the exact "Colorful Heart" icon style from the mockup for 'Miembros' section */
+#tab-miembros h2 i {
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
+}
+
+/* Helper for Tab Animations */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+.tab-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
