@@ -1,10 +1,10 @@
 const translations = {
     es: {
-        "nav-home": "[INICIO]",
-        "nav-about": "[SOBRE NOSOTROS]",
-        "nav-blog": "[HISTORIAS DE AYUDA (BLOG)]",
-        "nav-donate": "[CÓMO DONAR]",
-        "nav-contact": "[CONTÁCTANOS]",
+        "nav-home": "INICIO",
+        "nav-about": "SOBRE NOSOTROS",
+        "nav-blog": "HISTORIAS",
+        "nav-donate": "CÓMO DONAR",
+        "nav-contact": "CONTÁCTANOS",
         "banner-h1": "Nuestra Misión:<br>Provemos ayuda a los más necesitados.",
         "btn-dona": "Dona Ahora",
         "btn-cono": "Conócenos",
@@ -23,11 +23,11 @@ const translations = {
         "donate-bank": "Datos Bancarios"
     },
     en: {
-        "nav-home": "[HOME]",
-        "nav-about": "[ABOUT US]",
-        "nav-blog": "[HELP STORIES (BLOG)]",
-        "nav-donate": "[HOW TO DONATE]",
-        "nav-contact": "[CONTACT US]",
+        "nav-home": "HOME",
+        "nav-about": "ABOUT US",
+        "nav-blog": "STORIES",
+        "nav-donate": "HOW TO DONATE",
+        "nav-contact": "CONTACT US",
         "banner-h1": "Our Mission:<br>Providing help to those in most need.",
         "btn-dona": "Donate Now",
         "btn-cono": "Meet Us",
